@@ -1,0 +1,83 @@
+<h1>Edit MeetUp</h1>
+<h1 class="text-center">Create Restaurant</h1><br>
+<div class="container">
+  <%= form_for @restaurant , html: { multipart: true } do |f| %>
+
+      <% if @restaurant.errors.any? %>
+          <ul>
+            <% @restaurant.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+      <% end %>
+
+
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <%= f.text_field :name, class: 'form-control', id: 'inputEmail3', placeholder: 'Whats the name of the place? '  %>
+
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <%= f.text_area :description, class: 'form-control', id: 'inputEmail3', placeholder: 'Give a short description'  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Address1</label>
+        <div class="col-sm-10">
+          <%= f.text_field :address1,  class: 'form-control', id: 'inputEmail3', placeholder: 'Enter the address'  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Address2</label>
+        <div class="col-sm-10">
+          <%= f.text_field :address2, class: 'form-control', id: 'inputEmail3', placeholder: 'optional address 2 '  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+          <%= f.text_field :city,  class: 'form-control', id: 'inputEmail3', placeholder: 'what city is the place in? '  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">State</label>
+        <div class="col-sm-10">
+          <%= f.text_field :state,  class: 'form-control', id: 'inputEmail3', placeholder: 'what state is the place in?'  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Zip code</label>
+        <div class="col-sm-10">
+          <%= f.text_field :zipcode, class: 'form-control', id: 'inputEmail3', placeholder: 'what zipcode is the place in? '  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10">
+          <%= f.text_field :phone,  class: 'form-control', id: 'inputEmail3', placeholder: 'Phone number?'  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Email Address</label>
+        <div class="col-sm-10">
+          <%= f.text_field :email, type:"email", class: 'form-control', id: 'inputEmail3', placeholder: 'Do they have an email address ?'  %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Add An Image</label>
+        <div class="col-sm-10">
+          <%= f.file_field :image, class: 'form-control', id: 'inputEmail3', placeholder: 'Whats the name of the place? '  %>
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= f.submit 'Submit' ,  class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+</div>
