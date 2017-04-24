@@ -7,7 +7,9 @@ end
 
 
 gem 'rails', '~> 5.1.0.rc2'
-gem 'sqlite3'
+gem 'sqlite3', group: [:development,:test]
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 gem 'puma', '~> 3.7'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
