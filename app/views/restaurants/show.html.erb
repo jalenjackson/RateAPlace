@@ -1,0 +1,268 @@
+<style>
+  img {
+    position: relative;
+    width:100%;
+    height:auto;
+    filter: blur(10px);
+    animation: ani 1000ms ease-in-out 1 forwards;
+  }
+
+    @keyframes ani {
+      0%{
+        filter: blur(10px);
+      }
+      100%{
+        filter: blur(0px);
+      }
+    }
+    .back-btn{
+      position: absolute;
+      top:40px;
+      left:30px;
+      width:50px;
+      height: 50px;
+      border-radius:100%;
+      border:none;
+      background: #00A0C6;
+      color:white;
+
+
+    }
+</style>
+
+<%= image_tag @restaurant.image.url(:thumb) %>
+
+<div class="container animated fadeInUp">
+<h1 class="text-center"><%= @restaurant.name %></h1>
+<p style="color:grey;  text-align: center" class="tex-center"><%= @restaurant.description %></p>
+
+</div>
+
+<%= link_to root_path do %>
+<button class="back-btn"><-</button>
+    <% end %>
+
+<div style='width: 100%; height:50%;'>
+  <div id="custom_style" style='width: 100%; height: 100%;'></div>
+</div>
+
+
+
+<script>
+
+    var mapStyle = [
+        {
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "visibility": "off"
+                },
+                {
+                    "color": "#f49f53"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "stylers": [
+                {
+                    "color": "#f9ddc5"
+                },
+                {
+                    "lightness": -7
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "stylers": [
+                {
+                    "color": "#813033"
+                },
+                {
+                    "lightness": 43
+                }
+            ]
+        },
+        {
+            "featureType": "poi.business",
+            "stylers": [
+                {
+                    "color": "#645c20"
+                },
+                {
+                    "lightness": 38
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "stylers": [
+                {
+                    "color": "#1994bf"
+                },
+                {
+                    "saturation": -69
+                },
+                {
+                    "gamma": 0.99
+                },
+                {
+                    "lightness": 43
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#f19f53"
+                },
+                {
+                    "weight": 1.3
+                },
+                {
+                    "visibility": "on"
+                },
+                {
+                    "lightness": 16
+                }
+            ]
+        },
+        {
+            "featureType": "poi.business"
+        },
+        {
+            "featureType": "poi.park",
+            "stylers": [
+                {
+                    "color": "#645c20"
+                },
+                {
+                    "lightness": 39
+                }
+            ]
+        },
+        {
+            "featureType": "poi.school",
+            "stylers": [
+                {
+                    "color": "#a95521"
+                },
+                {
+                    "lightness": 35
+                }
+            ]
+        },
+        {},
+        {
+            "featureType": "poi.medical",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#813033"
+                },
+                {
+                    "lightness": 38
+                },
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+            "elementType": "labels"
+        },
+        {
+            "featureType": "poi.sports_complex",
+            "stylers": [
+                {
+                    "color": "#9e5916"
+                },
+                {
+                    "lightness": 32
+                }
+            ]
+        },
+        {},
+        {
+            "featureType": "poi.government",
+            "stylers": [
+                {
+                    "color": "#9e5916"
+                },
+                {
+                    "lightness": 46
+                }
+            ]
+        },
+        {
+            "featureType": "transit.station",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "transit.line",
+            "stylers": [
+                {
+                    "color": "#813033"
+                },
+                {
+                    "lightness": 22
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "stylers": [
+                {
+                    "lightness": 38
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "geometry.stroke",
+            "stylers": [
+                {
+                    "color": "#f19f53"
+                },
+                {
+                    "lightness": -10
+                }
+            ]
+        },
+        {},
+        {},
+        {}
+    ];
+
+    var handler = Gmaps.build('Google');
+    handler.buildMap({
+            internal: {id: 'custom_style'},
+            provider: {
+                zoom:      15,
+                center:    new google.maps.LatLng(33.748995, -84.387982),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles:    mapStyle
+            }
+        },
+        function(){ }
+    );
+
+</script>

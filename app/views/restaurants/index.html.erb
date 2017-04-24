@@ -1,0 +1,450 @@
+<style>
+  body{
+    background:rgb(245,245,255);
+    overflow-x: hidden;
+  }
+  /* Button 1e */
+  .btn-1e {
+    overflow: hidden;
+  }
+  .btn {
+    border: none;
+    font-family: inherit;
+    font-size: 10px;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-top:10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .btn:hover{
+    background:white;
+  }
+  .btn:before,
+  .icon-heart:after,
+  .icon-star:after,
+  .icon-plus:after,
+  .icon-file:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  .container-4{
+    overflow: hidden;
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .container-4 input#search{
+    width: 300px;
+    height: 50px;
+    background: rgb(225,225,245);
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: black;
+    padding-left: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .container-4 input#search::-webkit-input-placeholder {
+    color: #65737e;
+  }
+
+  .container-4 input#search:-moz-placeholder { /* Firefox 18- */
+    color: #65737e;
+  }
+
+  .container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+    color: #65737e;
+  }
+
+  .container-4 input#search:-ms-input-placeholder {
+    color: #65737e;
+  }
+
+  .container-4 button.icon{
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    border: none;
+    background: rgb(225,225,245);
+    height: 50px;
+    width: 50px;
+    color: #4f5b66;
+    opacity: 0;
+    font-size: 10pt;
+
+    -webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -ms-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+  }
+
+  .container-4 button.icon{
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+  }
+
+    .box{
+      margin: 0 auto;
+      background:red;
+    }
+
+    .panel{
+      box-shadow: 5px 10px 5px 0px rgba(0,0,0,0.12);
+
+    }
+
+  a {
+    color: #0060B6;
+    text-decoration: none;
+  }
+
+  a:hover
+  {
+    color:#00A0C6;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+    .btn-1e{
+      border: 1px solid white;
+    }
+
+  textarea, input, button { outline: none; }
+
+
+  .material-button-anim {
+    position: relative;
+    padding: 127px 15px 27px;
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto 20px;
+  }
+
+  .material-button {
+    position: relative;
+    top: 0;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #fff;
+    background: orangered;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,.275);
+    outline: none;
+  }
+  .material-button-toggle {
+    z-index: 3;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+  }
+  .material-button-toggle span {
+    -webkit-transform: none;
+    transform:         none;
+    -webkit-transition: -webkit-transform .175s cubic-bazier(.175,.67,.83,.67);
+    transition:         transform .175s cubic-bazier(.175,.67,.83,.67);
+  }
+  .material-button-toggle.open {
+    -webkit-transform: scale(1.3,1.3);
+    transform:         scale(1.3,1.3);
+    -webkit-animation: toggleBtnAnim .175s;
+    animation:         toggleBtnAnim .175s;
+  }
+  .material-button-toggle.open span {
+    -webkit-transition: -webkit-transform .175s cubic-bazier(.175,.67,.83,.67);
+    transition:         transform .175s cubic-bazier(.175,.67,.83,.67);
+  }
+
+  #options {
+    height: 70px;
+  }
+  .option {
+    position: relative;
+  }
+  .option .option1,
+  .option .option2,
+  .option .option3 {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -webkit-transition: all .175s;
+    transition:         all .175s;
+  }
+  .option .option1 {
+    -webkit-transform: translate3d(90px,90px,0) scale(.8,.8);
+    transform:         translate3d(90px,90px,0) scale(.8,.8);
+  }
+  .option .option2 {
+    -webkit-transform: translate3d(0,90px,0) scale(.8,.8);
+    transform:         translate3d(0,90px,0) scale(.8,.8);
+  }
+  .option .option3 {
+    -webkit-transform: translate3d(-90px,90px,0) scale(.8,.8);
+    transform:         translate3d(-90px,90px,0) scale(.8,.8);
+  }
+  .option.scale-on .option1,
+  .option.scale-on .option2,
+  .option.scale-on .option3 {
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    -webkit-transform: none;
+    transform:         none;
+    -webkit-transition: all .175s;
+    transition:         all .175s;
+  }
+  .option.scale-on .option2 {
+    -webkit-transform: translateY(-28px) translateZ(0);
+    transform:         translateY(-28px) translateZ(0);
+    -webkit-transition: all .175s;
+    transition:         all .175s;
+  }
+
+  @keyframes toggleBtnAnim {
+    0% {
+      -webkit-transform: scale(1,1);
+      transform:         scale(1,1);
+    }
+    25% {
+      -webkit-transform: scale(1.4,1.4);
+      transform:         scale(1.4,1.4);
+    }
+    75% {
+      -webkit-transform: scale(1.2,1.2);
+      transform:         scale(1.2,1.2);
+    }
+    100% {
+      -webkit-transform: scale(1.3,1.3);
+      transform:         scale(1.3,1.3);
+    }
+  }
+  @-webkit-keyframes toggleBtnAnim {
+    0% {
+      -webkit-transform: scale(1,1);
+      transform:         scale(1,1);
+    }
+    25% {
+      -webkit-transform: scale(1.4,1.4);
+      transform:         scale(1.4,1.4);
+    }
+    75% {
+      -webkit-transform: scale(1.2,1.2);
+      transform:         scale(1.2,1.2);
+    }
+    100% {
+      -webkit-transform: scale(1.3,1.3);
+      transform:         scale(1.3,1.3);
+    }
+  }
+
+    .bg{
+      background:linear-gradient( to left top,rgba(255, 127, 0, 0.9) , rgba(194, 21, 0, 0.9)), url('https://www.colourbox.com/preview/11748842-abstract-isometric-violet-cube-pattern-background.jpg') !important;
+      filter: blur(10px);
+      animation: ani 1s ease-in-out forwards 1;
+    }
+
+    @keyframes ani {
+      0%{
+        filter: blur(10px);
+
+      }
+      100%{
+        filter: blur(0px);
+
+      }
+    }
+
+
+
+
+</style>
+
+<div style="background:linear-gradient( to left top,#ffc500 , #c21500);"  class="bg">
+<img style="position: absolute; left:40%; top:75%; width:300px;height:300px;filter: contrast(160%);" src="http://icons.iconarchive.com/icons/designbolts/free-multimedia/1024/Video-Camera-icon.png">
+
+
+
+</div>
+
+
+  <div  style="position: absolute; width:100%; font-weight:bold;color:white; top:0; left:20px; ">
+  <h1 style="float: left;font-weight:bold;font-size:20px;">RateAPlace</h1>
+
+    <% if !user_signed_in? %>
+      <p class="sign_in" style="float:right; margin-right:100px; margin-top:20px;font-size:18px; font-weight:100;font-family: 'lato',sans-serif;">Sign in</p>
+      <p class="sign_up" style="float:right; margin-right:20px; margin-top:20px; font-size:18px; font-weight:100; font-family: 'lato',sans-serif;">Sign up</p>
+    <% else %>
+        <div style="position: absolute; left: 40%;top:-100%;" class="container">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <div class="material-button-anim">
+                <ul class="list-inline" id="options">
+                  <li class="option">
+                    <a href = "">
+                      <%= link_to destroy_user_session_path, :method => :delete do %>
+                      <button class="material-button option1" type="button">
+                      <span style="font-size:14px; font-weight:lighter;font-family:'lato',sans-serif"  aria-hidden="true">Sign Out</span>
+                    </button>
+                    <% end %>
+                    </a>
+                  </li>
+
+                  <li class="option">
+                    <%= link_to new_restaurant_path do %>
+                      <button class="material-button option2" type="button">
+                        <span style="font-size:12px; line-height:50%; font-weight:lighter;font-family:'lato',sans-serif"  aria-hidden="true"  aria-hidden="true">Write a review</span>
+                      </button>
+                    <% end %>
+                  </li>
+                  <li class="option">
+                    <button class="material-button option3" type="button">
+                      <span class="fa fa-user" aria-hidden="true"></span>
+                    </button>
+                  </li>
+                </ul>
+                <button class="material-button material-button-toggle" type="button">
+                  <span class="fa fa-user-o" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+  </div>
+<div  style="position: absolute; top:30%; left:50px; color:white; font-family: 'lato',sans-serif; font-size:40px; font-weight:lighter ">
+  <p class="animated fadeInUp" style="transform:translateY(-50px);font-size:14px;font-weight:bold;"> <button style="color:white;  background:mediumpurple;border-radius:50%; border:none; font-weight:lighter;">New</button> Sign up today and the paid membership is 15% off </p>
+
+  <p class="animated fadeInUp">Reviews for your favorite places</p>
+  <h2 class="animated fadeInUp" style="font-size:20px;font-weight:lighter;line-height: 145%">RateAPlace is the perfect place to see if the place <br> you hear so much about is really worth the visit. <br> Unhappy with a place? Write your review here! </h2>
+  <% if !user_signed_in? %>
+    <button  class=" animated fadeInUp sign_up btn btn-1 btn-1e">Sign Up</button>
+    <button  class="animated fadeInUp sign_in btn btn-1 btn-1e">Sign In</button>
+  <% else %>
+      <p style="color: white; font-weight:lighter; font-size:17px;margin-top:50px;">Welcome to <span style="font-weight:bold;color:white;">RateAPlace</span> <%= current_user.email %></p>
+  <% end %>
+
+</div>
+
+
+
+
+<div style="margin-top:160px;" class="container">
+  <% if user_signed_in? %>
+      <h1 style = "color:rgb(80,80,80); text-align:center">Hey <span style="font-weight:bold;font-size:43px;"><%= current_user.email[0].upcase %>!</span> Search for a place that interests you! <img style="width:50px;height:50px;" src ="https://images.vexels.com/media/users/3/132066/isolated/preview/71646d7673e8847ab07b3b7e78928777-search-circle-icon-by-vexels.png"></h1></h1>
+
+  <% end %>
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <div style="margin:0 auto;"class="container-4">
+      <h1 style="font-weight: lighter;">
+        <% if !user_signed_in? %>
+          Search
+        <img style="width:50px;height:50px;" src ="https://images.vexels.com/media/users/3/132066/isolated/preview/71646d7673e8847ab07b3b7e78928777-search-circle-icon-by-vexels.png"></h1>
+        <% end %>
+
+        <input type="search" id="search" placeholder="Search..." />
+      <button class="icon"><i class="fa fa-search"></i></button>
+    </div><br><br>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <a href="restaurants/16" class="well-link">
+        <div style="height:185px; border-radius:.6em;" class="panel">
+          <img style="width:40%;height:90%; position: absolute;" src ="https://www.departures.com/sites/default/files/1433262617/article_june_food_news_eataly_sao_paulo_dining_area_2000x1333.jpg">
+          <div style="margin-left:45%; color:mediumorchid; font-size:17px; letter-spacing: 1px; font-weight:400;" class="panel-heading">Negroni</div>
+          <div style="margin-left:45%;"class="panel-body">
+            <p style="color:rgb(150,150,150);; font-size:15px; font-weight:400; letter-spacing: 0.3px;"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="restaurants/16" class="well-link">
+        <div style="height:185px; border-radius:.6em;" class="panel">
+          <img style="width:40%;height:90%; position: absolute;" src ="https://s-media-cache-ak0.pinimg.com/originals/5c/b1/b3/5cb1b37e3cc239dd3187fa4dda4d62b3.jpg">
+          <div style="margin-left:45%; color:mediumorchid; font-size:17px; letter-spacing: 1px; font-weight:400;" class="panel-heading">Copelands</div>
+          <div style="margin-left:45%;"class="panel-body">
+            <p style="color:rgb(150,150,150); font-size:15px; font-weight:400; letter-spacing: 0.3px;"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div><br>
+  <p style="font-size:14px; color:grey; font-weight:bold;"> <img style="width:40px;height:40px;" src ="https://www.cityofalbany.net/images/stories/transparency/thumbs-up.png">
+    <% if !user_signed_in? %>
+       Popular Places
+    <% else %>
+      <%= current_user.email %> you may like these places.
+    <% end %>
+  </p>
+  <div class="row">
+    <% @restaurants.each do |r| %>
+
+  <div class="col-md-4">
+      <a href="restaurants/<%= r.id %>" class="well-link">
+        <div style="height:140px;" class="panel ">
+          <img style="width:40%;height:87%; position: absolute;" src ="<%= r.image.url(:medium) %>">
+
+          <div style="margin-left:45%;letter-spacing: 1px;font-weight:400;color:mediumorchid;"class="panel-heading"><%= r.name %></div>
+          <div style="margin-left:45%;"class="panel-body">
+            <p style="  word-wrap: break-word;color:rgb(150,150,150); font-size:15px; font-weight:400; letter-spacing: 0.3px;"> <%= truncate(strip_tags(r.description), length:60) %></p>
+          </div>
+        </div>
+      </a>
+    </div>
+        <% end %>
+  </div>
+</div>
+
+<script>
+  $(".sign_in").click(function(){
+      window.location.href = "users/sign_in"
+  });
+  $(".sign_up").click(function(){
+      window.location.href = "users/sign_up"
+  });
+
+      $('.material-button-toggle').on("click", function () {
+          $(this).toggleClass('open');
+          $('.option').toggleClass('scale-on');
+      });
+
+</script>
